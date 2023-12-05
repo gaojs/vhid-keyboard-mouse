@@ -1,21 +1,14 @@
 /*++
-
-Copyright (C) Microsoft Corporation, All Rights Reserved.
-
+    Copyright (C) Microsoft Corporation, All Rights Reserved.
 Module Name:
-
     util.cpp
 
 Abstract:
-
     This module contains the implementation of the driver
 
 Environment:
-
     Windows Driver Framework (WDF)
-
 --*/
-
 #include "vhidmini.h"
 
 //
@@ -48,7 +41,6 @@ RequestGetHidXferPacket_ToReadFromDevice(
     //
     //   Report Buffer: Output Buffer
     //   Report Id    : Input Buffer
-    //
 
     NTSTATUS                status;
     WDFMEMORY               inputMemory;
@@ -58,9 +50,7 @@ RequestGetHidXferPacket_ToReadFromDevice(
     PVOID                   inputBuffer;
     PVOID                   outputBuffer;
 
-    //
     // Get report Id from input buffer
-    //
     status = WdfRequestRetrieveInputMemory(Request, &inputMemory);
     if( !NT_SUCCESS(status) ) {
         KdPrint(("WdfRequestRetrieveInputMemory failed 0x%x\n",status));
@@ -74,23 +64,17 @@ RequestGetHidXferPacket_ToReadFromDevice(
                             (int)inputBufferLength, (int)sizeof(UCHAR)));
         return status;
     }
-
     Packet->reportId        = *(PUCHAR)inputBuffer;
 
-    //
     // Get report buffer from output buffer
-    //
     status = WdfRequestRetrieveOutputMemory(Request, &outputMemory);
     if( !NT_SUCCESS(status) ) {
         KdPrint(("WdfRequestRetrieveOutputMemory failed 0x%x\n",status));
         return status;
     }
-
     outputBuffer = WdfMemoryGetBuffer(outputMemory, &outputBufferLength);
-
     Packet->reportBuffer    = (PUCHAR) outputBuffer;
     Packet->reportBufferLen = (ULONG)  outputBufferLength;
-
     return status;
 }
 
@@ -121,9 +105,7 @@ RequestGetHidXferPacket_ToWriteToDevice(
     size_t                  outputBufferLength;
     PVOID                   inputBuffer;
 
-    //
     // Get report Id from output buffer length
-    //
     status = WdfRequestRetrieveOutputMemory(Request, &outputMemory);
     if( !NT_SUCCESS(status) ) {
         KdPrint(("WdfRequestRetrieveOutputMemory failed 0x%x\n",status));
@@ -132,18 +114,14 @@ RequestGetHidXferPacket_ToWriteToDevice(
     WdfMemoryGetBuffer(outputMemory, &outputBufferLength);
     Packet->reportId        = (UCHAR) outputBufferLength;
 
-    //
     // Get report buffer from input buffer
-    //
     status = WdfRequestRetrieveInputMemory(Request, &inputMemory);
     if( !NT_SUCCESS(status) ) {
         KdPrint(("WdfRequestRetrieveInputMemory failed 0x%x\n",status));
         return status;
     }
     inputBuffer = WdfMemoryGetBuffer(inputMemory, &inputBufferLength);
-
     Packet->reportBuffer    = (PUCHAR) inputBuffer;
     Packet->reportBufferLen = (ULONG)  inputBufferLength;
-
     return status;
 }

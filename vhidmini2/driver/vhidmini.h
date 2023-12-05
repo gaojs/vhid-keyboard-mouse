@@ -1,17 +1,13 @@
 /*++
-
 Copyright (C) Microsoft Corporation, All Rights Reserved
 
 Module Name:
-
     vhidmini.h
 
 Abstract:
-
     This module contains the type definitions for the driver
 
 Environment:
-
     Windows Driver Framework (WDF)
 
 --*/
@@ -23,9 +19,7 @@ Environment:
 #endif
 
 #include <wdf.h>
-
 #include <hidport.h>  // located in $(DDK_INC_PATH)/wdm
-
 #include "common.h"
 
 typedef UCHAR HID_REPORT_DESCRIPTOR, *PHID_REPORT_DESCRIPTOR;
@@ -166,15 +160,11 @@ ReadDescriptorFromRegistry(
     _In_ WDFDEVICE Device
     );
 
-//
 // Misc definitions
-//
 #define CONTROL_FEATURE_REPORT_ID   0x01
 
-//
 // These are the device attributes returned by the mini driver in response
 // to IOCTL_HID_GET_DEVICE_ATTRIBUTES.
-//
 #define HIDMINI_PID             0xFEED
 #define HIDMINI_VID             0xDEED
 #define HIDMINI_VERSION         0x0101
