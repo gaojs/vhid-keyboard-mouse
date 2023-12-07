@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testvhid", "app\testvhid.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VhidminiUm", "driver\umdf2\VhidminiUm.vcxproj", "{EEECA421-064D-4E2E-8832-B0F43A9B394C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vhidmini", "driver\kmdf\vhidmini.vcxproj", "{64048006-1C5F-4262-823B-54310D7F3869}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,18 @@ Global
 		{EEECA421-064D-4E2E-8832-B0F43A9B394C}.Release|Win32.Build.0 = Release|Win32
 		{EEECA421-064D-4E2E-8832-B0F43A9B394C}.Release|x64.ActiveCfg = Release|x64
 		{EEECA421-064D-4E2E-8832-B0F43A9B394C}.Release|x64.Build.0 = Release|x64
+		{64048006-1C5F-4262-823B-54310D7F3869}.Debug|Win32.ActiveCfg = Debug|Win32
+		{64048006-1C5F-4262-823B-54310D7F3869}.Debug|Win32.Build.0 = Debug|Win32
+		{64048006-1C5F-4262-823B-54310D7F3869}.Debug|Win32.Deploy.0 = Debug|Win32
+		{64048006-1C5F-4262-823B-54310D7F3869}.Debug|x64.ActiveCfg = Debug|x64
+		{64048006-1C5F-4262-823B-54310D7F3869}.Debug|x64.Build.0 = Debug|x64
+		{64048006-1C5F-4262-823B-54310D7F3869}.Debug|x64.Deploy.0 = Debug|x64
+		{64048006-1C5F-4262-823B-54310D7F3869}.Release|Win32.ActiveCfg = Release|Win32
+		{64048006-1C5F-4262-823B-54310D7F3869}.Release|Win32.Build.0 = Release|Win32
+		{64048006-1C5F-4262-823B-54310D7F3869}.Release|Win32.Deploy.0 = Release|Win32
+		{64048006-1C5F-4262-823B-54310D7F3869}.Release|x64.ActiveCfg = Release|x64
+		{64048006-1C5F-4262-823B-54310D7F3869}.Release|x64.Build.0 = Release|x64
+		{64048006-1C5F-4262-823B-54310D7F3869}.Release|x64.Deploy.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +59,7 @@ Global
 		{8F9E6911-FDD4-4D28-9821-8A3AC44EBC82} = {837BF49F-1143-4D82-A340-99AAFAE83F72}
 		{36B830C1-B73B-4CEE-B872-FD7D09268BD0} = {744A43A0-C177-412C-A0F7-C875B9C5C5B5}
 		{EEECA421-064D-4E2E-8832-B0F43A9B394C} = {8F9E6911-FDD4-4D28-9821-8A3AC44EBC82}
+		{64048006-1C5F-4262-823B-54310D7F3869} = {8F9E6911-FDD4-4D28-9821-8A3AC44EBC82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03098CB0-E77C-4273-B326-155D7D8A59C2}
